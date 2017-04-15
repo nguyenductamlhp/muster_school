@@ -19,21 +19,26 @@ public class LoginOptionPane extends JOptionPane{
 		};
 
 		option = JOptionPane.showConfirmDialog(null, message, "Đăng nhập", JOptionPane.OK_CANCEL_OPTION);
-		
 	}
 	
-	public boolean isSuccess() {
-		boolean isSuccess = false;
-		if (option == JOptionPane.OK_OPTION) {
-		    if (username.getText().equals("h") && password.getText().equals("h")) {
-		        System.out.println("Login successful");
-		        isSuccess = true;
-		    } else {
-		        System.out.println("login failed");
-		    }
-		} else {
-		    System.out.println("Login canceled");
-		}
-		return isSuccess;
+	
+	public JTextField getUsername() {
+		return username;
 	}
+
+
+	public void setUsername(JTextField username) {
+		this.username = username;
+	}
+
+
+	public JTextField getPassword() {
+		return password;
+	}
+
+
+	public void setPassword(JTextField password) {
+		this.password = password;
+	}
+
 }

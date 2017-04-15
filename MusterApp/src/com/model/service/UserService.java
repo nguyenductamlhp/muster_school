@@ -35,8 +35,8 @@ public class UserService {
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
 		String hsql = "select u from User u where username = :uname and password = :pass";
 		Query query = entityManager.createQuery(hsql);
-		query.setParameter(0, username);
-		query.setParameter(1, password);
+		query.setParameter("uname", username);
+		query.setParameter("pass", password);
 		List<User> list_user = query.getResultList();
 		if (list_user.size() == 1) {
 			isSuccess = true;
