@@ -2,7 +2,10 @@ package com.model.entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 
 /**
@@ -60,5 +63,15 @@ public class CourseSession implements Serializable {
 	public void setState(String state) {
 		this.state = state;
 	}
-
+	public List<User> getJoinedUser() {
+		List<User> listJoinedUser = new ArrayList<>();
+		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("MusterApp");
+		EntityManager entityManager = entityManagerFactory.createEntityManager();
+		String hsql = "select u from User as u, CourseSession as cs where u.id =: u_id";
+		Query query = entityManager.createQuery(hsql);
+		listJoinedUser = query.getResultList();
+		entityManager.close();
+		entityManagerFactory.close();
+		return listJoinedUser;
+	}
 }

@@ -3,7 +3,9 @@ package com.model.entity;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.sql.Time;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 
 /**
@@ -105,5 +107,6 @@ public class Course implements Serializable {
 	public void setWeekDay(int weekDay) {
 		this.weekDay = weekDay;
 	}
-
+	
+	
 }

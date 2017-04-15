@@ -7,6 +7,7 @@
 		<class>com.model.entity.Course</class>
 		<class>com.model.entity.CourseSession</class>
 		<class>com.model.entity.User</class>
+		<class>com.model.entity.Class</class>
 		
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/school"/>
